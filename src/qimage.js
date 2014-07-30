@@ -4,6 +4,8 @@
 (function (definition) {
     if (typeof exports === "object") {
         module.exports = definition(require("q"));
+    } else if (typeof define === 'function' && define.amd) {
+        define(['q'], definition);
     } else {
         window.Qimage = definition(window.Q);
     }
